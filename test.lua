@@ -3,11 +3,11 @@ local lz4 = require("lz4")
 -- simple frame
 local s = "LZ4 is a very fast compression and decompression algorithm."
 print('simple frame')
-print("s = ", s)
+print("s = ", s, string.len(s))
 local c = lz4.compress(s)
-print("lz4.compress = ", c)
+print("lz4.compress = ", c, string.len(c))
 local d = lz4.decompress(c)
-print("lz4.decompress = ", d)
+print("lz4.decompress = ", d, string.len(d))
 assert(d == s)
 
 -- block
